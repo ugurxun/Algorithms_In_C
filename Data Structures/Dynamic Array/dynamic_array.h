@@ -1,11 +1,8 @@
 #ifndef DYNAMIC_ARRAY 
 #define DYNAMIC_ARRAY
 
-#include <stdio.h>
+#include <stddef.h>
 #include <stdbool.h>
-
-//#define array_size(a) (sizeof((a)) / sizeof((a)[0]))
-#define DEFAULT_CAP 10
 
 typedef int DATATYPE;
 
@@ -43,4 +40,4 @@ bool clean_darray(HDArray hdarray);
 void destroy_darray(HDArray hdarray);
 
 
-#endif // !DYNAMIC_ARRAY 
+#endif //DYNAMIC_ARRAY 

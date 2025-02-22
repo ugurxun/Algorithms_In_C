@@ -1,6 +1,7 @@
 #include "dynamic_array.h"
-#include "stdlib.h"
-#include "string.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 
 HDArray create_darray(size_t cap)
