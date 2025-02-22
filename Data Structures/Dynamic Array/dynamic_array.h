@@ -4,7 +4,8 @@
 #include <stdio.h>
 #include <stdbool.h>
 
-#define DEFAULT_CAP 1000
+//#define array_size(a) (sizeof((a)) / sizeof((a)[0]))
+#define DEFAULT_CAP 10
 
 typedef int DATATYPE;
 
@@ -18,8 +19,8 @@ typedef struct TagDArray {
 
 
 HDArray create_darray(size_t cap);
-HDArray create_filled_darray(size_t cap, DATATYPE data);
-HDArray create_darray_with_array(DATATYPE* parray);
+HDArray create_filled_darray(size_t sz, DATATYPE data);
+HDArray create_darray_with_array(const DATATYPE* parray, size_t length);
 
 
 bool push_back(HDArray hdarray, DATATYPE data);
@@ -34,12 +35,12 @@ static inline size_t get_capacity(HDArray hdarray)
 {
 	return hdarray->capacity;
 }
-size_t get_idx_value(HDArray hdarray, size_t idx);
-void print_vector(HDArray hdarray);
+DATATYPE get_idx_value(HDArray hdarray, size_t idx);
+void display_darray(HDArray hdarray);
+bool shrink(HDArray hdarray);
 
-HDArray clean_vector(HDArray hdarray);
-void destroy_vector(HDArray hdarray);
+bool clean_darray(HDArray hdarray);
+void destroy_darray(HDArray hdarray);
 
 
 #endif // !DYNAMIC_ARRAY 
-
