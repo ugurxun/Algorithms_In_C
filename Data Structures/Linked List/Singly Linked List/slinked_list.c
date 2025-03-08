@@ -90,19 +90,29 @@ bool insert_idx(HSLinkedList hslinkedlist, size_t idx, DATATYPE data)
 
 bool pop_back(HSLinkedList hslinkedlist)
 {
+
     if(!hslinkedlist->node_head)
+    {
         return false;
-    
-    Node* temp_node = hslinkedlist->node_head;
-    size_t count = hslinkedlist->size -2;
+    }
+    else if(hslinkedlist->size == 1)
+    {
+        free(hslinkedlist->node_head);
+        hslinkedlist->node_head = NULL;
+        hslinkedlist->node_tail = NULL;
+        --hslinkedlist->size;
+    }
+    else
+    {
+        Node* tnode = hslinkedlist->node_head;
+        size_t count = hslinkedlist->size -2;
 
-    while(count--)
-        temp_node = temp_node->next_node;
-        
+        while(count--)
+            tnode = tnode->next_node;
 
-    temp_node->next_node = NULL;
-    hslinkedlist->node_tail = temp_node->next_node ;
-    --hslinkedlist->size;
+        free(tnode->next_node);
+        tnode->next_node = NULL;
+    }
 
     return true;
 }
@@ -111,9 +121,11 @@ bool pop_front(HSLinkedList hslinkedlist)
 {
     if(!hslinkedlist->node_head)
         return false;
-
+    
+    Node* tnode = hslinkedlist->node_head;    
     hslinkedlist->node_head = hslinkedlist->node_head->next_node;
     --hslinkedlist->size;
+    free(tnode);
     return true;
 }
 
@@ -132,12 +144,15 @@ bool delete_idx(HSLinkedList hslinkedlist, size_t idx)
     }
     else
     {
-        Node* temp_node = hslinkedlist->node_head; 
+        Node* node = hslinkedlist->node_head; 
+        Node* tnode;
 
         while(--idx)
-            temp_node = temp_node->next_node;
+            node = node->next_node;
 
-        temp_node->next_node = temp_node->next_node->next_node;
+        tnode = node->next_node;    
+        node->next_node = node->next_node->next_node;
+        free(tnode);
         --hslinkedlist->size;
     }
     return true;

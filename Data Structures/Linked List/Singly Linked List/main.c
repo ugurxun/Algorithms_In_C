@@ -40,8 +40,14 @@ int main(void)
     
     printf("TEST OF DELETE_IDX\n");
     delete_idx(sll1,0);
+    printf("sll1 size: %zu\n", get_size(sll1));
+    display_hslinkedlist(sll1);
     delete_idx(sll1,10);
+    printf("sll1 size: %zu\n", get_size(sll1));
+    display_hslinkedlist(sll1);
     delete_idx(sll1,8);
+    printf("sll1 size: %zu\n", get_size(sll1));
+    display_hslinkedlist(sll1);
     delete_idx(sll1,1);
     printf("sll1 size: %zu\n", get_size(sll1));
     display_hslinkedlist(sll1);
