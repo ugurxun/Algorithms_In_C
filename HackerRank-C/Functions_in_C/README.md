@@ -4,7 +4,7 @@ Write a function **int max_of_four(int a, int b, int c, int d)** which reads fou
 
 # **Note**
 
-There is not built in max function in C. Code that will be reused is often put in a separate function, e.g. **int max(x, y)**that returns the greater of the two values.
+There is not built in max function in C. Code that will be reused is often put in a separate function, e.g. **int max(x, y)** that returns the greater of the two values.
 
 # **Input Format**
 
