@@ -23,7 +23,6 @@ The third line prints the sentence, **sen**.
 C
 Language
 Welcome To C!!
-Sample Output 0
 ```
 
 ## **Sample Output 0**
