@@ -22,7 +22,7 @@ int main()
             else if(max_idx-j<=i && i<=j)
                 printf("%d ",n+j-max_idx);
             else
-            printf("%d ",n);
+                printf("%d ",n);
         }
         putchar('\n');
     }
