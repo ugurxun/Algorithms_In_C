@@ -22,7 +22,7 @@ Print exactly n lines. On each line print 3 space-separated integers, the a, b a
 5 12 13
 3 4 5
 ```
-## **Sample Output 0
+## **Sample Output 0**
 ```
 3 4 5
 5 12 13
