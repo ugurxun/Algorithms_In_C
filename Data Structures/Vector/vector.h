@@ -5,6 +5,7 @@
 #include <stdbool.h>
 
 #define DEFAULT_CAP 8
+#define CAP_FACTOR  2 
 
 typedef int DATATYPE;
 

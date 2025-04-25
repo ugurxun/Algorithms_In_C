@@ -24,7 +24,7 @@ HVector create_vector()
 HVector create_filled_vector(size_t sz, DATATYPE data)
 {
 	HVector hvector = (HVector)malloc(sizeof(Vector));
-	size_t cap = sz * 2;
+	size_t cap = sz * CAP_FACTOR;
 
 	if(!hvector)
 		return NULL;
@@ -46,7 +46,7 @@ HVector create_vector_with_array(const DATATYPE* parray, size_t length)
 {
 	HVector hvector = (HVector)malloc(sizeof(Vector));
 	
-	size_t cap = length * 2;
+	size_t cap = length * CAP_FACTOR;
 
 	if(!hvector)
 		return NULL;
@@ -68,9 +68,9 @@ bool push_back(HVector hvector, DATATYPE data)
 {
 	if(hvector->capacity <= hvector->size)
 	{
-		if(!(hvector->vector_head = (DATATYPE*)realloc(hvector->vector_head , 2 * hvector->capacity * sizeof(DATATYPE))))
+		if(!(hvector->vector_head = (DATATYPE*)realloc(hvector->vector_head , CAP_FACTOR * hvector->capacity * sizeof(DATATYPE))))
 			return false;
-		hvector->capacity *= 2;
+		hvector->capacity *= CAP_FACTOR;
 	}
 	
 	hvector->vector_head[hvector->size++] = data;
@@ -81,9 +81,9 @@ bool insert_idx(HVector hvector, size_t idx, DATATYPE data)
 {
 	if(hvector->capacity <= hvector->size)
 	{
-		if(!(hvector->vector_head = (DATATYPE*)realloc(hvector->vector_head , 2 * hvector->capacity * sizeof(DATATYPE))))
+		if(!(hvector->vector_head = (DATATYPE*)realloc(hvector->vector_head , CAP_FACTOR * hvector->capacity * sizeof(DATATYPE))))
 			return false;
-		hvector->capacity *= 2;
+		hvector->capacity *= CAP_FACTOR;
 	}
 
 	if(!memmove(hvector->vector_head + idx + 1, hvector->vector_head + idx, sizeof(DATATYPE) * ((hvector->size) - idx)))
