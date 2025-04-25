@@ -4,18 +4,18 @@
 #include <string.h>
 
 
-HVector create_vector(size_t cap)
+HVector create_vector()
 {
 	HVector hvector = (HVector)malloc(sizeof(Vector));
 
 	if(!hvector)
 		return NULL;
 
-	if(!(hvector->vector_head = (DATATYPE*)malloc(cap * sizeof(DATATYPE))))
+	if(!(hvector->vector_head = (DATATYPE*)malloc(DEFAULT_CAP * sizeof(DATATYPE))))
 		return NULL;
 	
 	hvector->size = 0; 
-	hvector->capacity = cap;
+	hvector->capacity = DEFAULT_CAP;
 
 	return hvector; 
 }

@@ -4,7 +4,7 @@
 int main(void)
 {   
     printf("TEST OF CREATE_VECTOR\n");
-    HVector v1 = create_vector(8);
+    HVector v1 = create_vector();
     printf("v1 size: %zu\n", get_size(v1));
     printf("v1 capacity: %zu\n", get_capacity(v1));
     printf("--------------------------------------------------------------------------------------\n");

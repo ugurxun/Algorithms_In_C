@@ -4,6 +4,8 @@
 #include <stddef.h>
 #include <stdbool.h>
 
+#define DEFAULT_CAP 8
+
 typedef int DATATYPE;
 
 typedef struct TagVector {
@@ -15,7 +17,7 @@ typedef struct TagVector {
 }Vector, * HVector;
 
 
-HVector create_vector(size_t cap);
+HVector create_vector();
 HVector create_filled_vector(size_t sz, DATATYPE data);
 HVector create_vector_with_array(const DATATYPE* parray, size_t length);
 
