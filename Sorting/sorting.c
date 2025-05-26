@@ -3,14 +3,21 @@
 
 void bubble_sort(data_type* seq, size_t len, sort_type type)
 {   
+    
     for(size_t i=0; i<len-1; ++i)
-            for(size_t k=0; k<len-i-1; ++k)
-                if(type * seq[k] > type * seq[k+1])
-                {
-                    data_type temp = seq[k];
-                    seq[k] = seq[k+1];
-                    seq[k+1] = temp;
-                }        
+    {       
+        int is_sorted = 1;
+        for(size_t k=0; k<len-i-1; ++k)
+            if(type * seq[k] > type * seq[k+1])
+            {
+                data_type temp = seq[k];
+                seq[k] = seq[k+1];
+                seq[k+1] = temp;
+                is_sorted = 0;
+            }
+        if(is_sorted)
+            break;
+    }               
 }
 
 void selection_sort(data_type* seq, size_t len, sort_type type)
