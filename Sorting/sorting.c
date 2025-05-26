@@ -41,7 +41,22 @@ void selection_sort(data_type* seq, size_t len, sort_type type)
     }    
 }
 
+void insertion_sort(data_type* seq, size_t len, sort_type type)
+{
+    for (size_t i = 1; i < len; ++i)
+    {
+        int key = seq[i];
+        int j = i - 1;
 
+        while (j >= 0 && type * seq[j] > type * key)
+        {
+            seq[j + 1] = seq[j];
+            --j;
+        }
+
+        seq[j + 1] = key;
+    }
+}
 
 void display(data_type* seq, size_t len)
 {   
