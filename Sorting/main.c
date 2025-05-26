@@ -9,9 +9,9 @@ int main()
                       0, -5, 7, -8, 14, 19, -2, -12, 25, 18,-21, 6, 3, -3, -5, 19, 12, -7, 4, -16,
                       14, -2, 9, -3, 7, -5, 6, 23, -8, 0};
     
-    bubble_sort(seq, LEN, ASCENDING);
+    selection_sort(seq, LEN, ASCENDING);
     display(seq, LEN);
-    bubble_sort(seq, LEN, DESCENDING);
+    selection_sort(seq, LEN, DESCENDING);
     display(seq, LEN);
 
 } 

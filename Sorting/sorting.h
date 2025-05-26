@@ -8,6 +8,7 @@
 #include <stddef.h>
 
 void bubble_sort(data_type* seq, size_t len, sort_type type);
+void selection_sort(data_type* seq, size_t len, sort_type type);
 void display(data_type* seq, size_t len);
 
 
